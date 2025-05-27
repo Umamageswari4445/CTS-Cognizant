@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Style for all <h2> elements */
+h2 {
+    font-size: 24px;
+    color: darkblue;
+}
+
+/* ID Selector for main header */
+#mainHeader {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Class selector for event cards */
+.eventCard {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Grouping selector */
+h3, p {
+    font-family: Arial, sans-serif;
+    color: #333;
+}

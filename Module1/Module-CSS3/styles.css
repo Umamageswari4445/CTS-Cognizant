@@ -1,0 +1,168 @@
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 24px;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+
+#mainHeader {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.eventCard {
+  border: 1px solid #ccc;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+h3, p {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+body {
+  background: #e0f7fa url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+section h2 {
+  background: linear-gradient(to right, #007BFF, #00C3FF);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.description {
+  text-align: justify;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: orange;
+}
+
+a:active {
+  color: red;
+}
+
+.nav-menu {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.nav-menu li {
+  padding: 5px 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.eventCard {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #007BFF;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: 2px solid #00C3FF;
+}
+
+.hidden-element {
+  visibility: hidden;
+}
+
+.removed-element {
+  display: none;
+}
+
+.news article {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eventCard {
+    font-size: 90%;
+    margin: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

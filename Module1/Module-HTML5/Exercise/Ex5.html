@@ -1,0 +1,48 @@
+<form>
+      <h2>Register for an Event</h2>
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name" required /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" required /></td>
+        </tr>
+        <tr>
+          <td><label for="eventDate">Event Date:</label></td>
+          <td><input type="date" id="eventDate" name="eventDate" required /></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Phone Number:</label></td>
+          <td><input type="tel" id="phone" name="phone" required /></td>
+        </tr>
+        <tr>
+          <td><label for="event">Event:</label></td>
+          <td>
+            <select id="event" name="event" required>
+              <option value="">-- Select an Event --</option>
+              <option value="music">Music Concert</option>
+              <option value="cultural">Cultural Festival</option>
+              <option value="sports">Sports Day</option>
+              <option value="workshop">Art Workshop</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="location">Location:</label></td>
+          <td>
+            <button type="button" onclick="getLocation()">Get My Location</button>
+            <p id="locResult"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Upload ID Proof:</td>
+          <td><input type="file" accept=".jpg,.jpeg,.png,.pdf" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit">Register</button></td>
+        </tr>
+      </table>
+    </form>

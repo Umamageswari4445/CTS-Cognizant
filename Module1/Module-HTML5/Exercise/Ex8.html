@@ -1,0 +1,19 @@
+<script>
+function savePreference() {
+  const selected = document.getElementById("eventType").value;
+  localStorage.setItem("preferredEvent", selected);
+}
+
+window.onload = function () {
+  const saved = localStorage.getItem("preferredEvent");
+  if (saved) document.getElementById("eventType").value = saved;
+};
+
+function clearPrefs() {
+  localStorage.clear();
+  sessionStorage.clear();
+  alert("Preferences cleared");
+}
+</script>
+
+<button onclick="clearPrefs()">Clear Preferences</button>

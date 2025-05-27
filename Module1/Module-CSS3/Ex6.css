@@ -1,0 +1,18 @@
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: orange; }
+a:active { color: red; }
+
+.nav-menu {
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-menu li {
+    padding: 5px 10px;
+}
+
