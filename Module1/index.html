@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="JavaScript.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav>
+      <a href="#welcomeBanner">Home</a>
+      <a href="#events">Events</a>
+      <a href="#register">Register</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#contact">Contact</a>
+      <a href="help.com" target="_blank">Help</a>
+    </nav>
+  </header>
+
+  <!-- Welcome Banner -->
+  <section id="welcomeBanner">
+    <h1>Welcome to the Local Community <span class="highlight">Event Portal</span></h1>
+    <p>Discover events, register, and stay connected with your community!</p>
+  </section>
+
+  <!-- Event Gallery -->
+  <section id="events">
+    <table >
+      <caption>Event Highlights</caption>
+      <tr>
+        <td><img src="https://www.italia.it/content/dam/tdh/en/interests/italia/picnic-in-vigna-i-piu-belli-e-suggestivi-ditalia/media/1600X1000_picnic_in_vigna_hero.jpg" alt="Cultural Fest"  title="Picnic" ondblclick="Enlarge(this)"/></td>
+        <td><img src="https://www.bizzabo.com/wp-content/uploads/2021/09/workshop-event-ideas-red-chairs-min.png" alt="Music Concert" title="MusicFest" ondblclick="Enlarge(this)"/></td>
+        <td><img src="https://th.bing.com/th/id/OIP.JZOuQzUpmtOXxD5TyqPWEQHaDq?cb=iwp2&rs=1&pid=ImgDetMain" alt="Food Festival" title="Food Festival" ondblclick="Enlarge(this)" /></td>
+      </tr>
+       <tr>
+            <td><img src="https://th.bing.com/th/id/OIP.d1k428quXIuxd1rLXU4hqwHaE7?cb=iwp2&rs=1&pid=ImgDetMain" alt="CleanUp Drive" title="CleanUp Drive" ondblclick="Enlarge(this)" /></td>
+            <td><img src="https://th.bing.com/th/id/OIP.QxXRtLC3wpJhDWw4O3lv-AHaDm?cb=iwp2&rs=1&pid=ImgDetMain" alt="Book Fair" title="Book Fair" ondblclick="Enlarge(this)" /></td>
+            <td><img src="https://image.rush49.com/rush49/images/artexpo-gal11675461998website.jpg" alt="Art Expo" title="Art Expo" ondblclick="Enlarge(this)"/></td>
+          </tr>
+    </table>
+  </section>
+
+  <!-- Registration Form -->
+  <section id="register">
+    <form>
+      <h2>Register for an Event</h2>
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name" required /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" required /></td>
+        </tr>
+        <tr>
+          <td><label for="eventDate">Event Date:</label></td>
+          <td><input type="date" id="eventDate" name="eventDate" required /></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Phone Number:</label></td>
+          <td><input type="tel" id="phone" name="phone" required /></td>
+        </tr>
+        <tr>
+          <td><label for="event">Event:</label></td>
+          <td>
+            <select id="event" name="event" required>
+              <option value="">-- Select an Event --</option>
+              <option value="music">Music Concert</option>
+              <option value="cultural">Cultural Festival</option>
+              <option value="sports">Sports Day</option>
+              <option value="workshop">Art Workshop</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="location">Location:</label></td>
+          <td>
+            <button type="button" onclick="getLocation()">Get My Location</button>
+            <p id="locResult"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Upload ID Proof:</td>
+          <td><input type="file" accept=".jpg,.jpeg,.png,.pdf" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit">Register</button></td>
+        </tr>
+      </table>
+    </form>
+  </section>
+
+  <!-- Feedback Section -->
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <textarea id="feedback" maxlength="200" placeholder="Write your feedback..."></textarea>
+    <div id="charCount">200 characters remaining</div>
+    <br />
+    <button onclick="submitFeedback()">Submit Feedback</button>
+    <br /><br />
+    <img src="thumb.png" id="Thumb" alt="Thumbs Up" width="60" height="60" onclick="showThankYou()" />
+    <div id="thanks"></div>
+  </section>
+
+  <!-- Event Video -->
+  <section id="promo">
+    <h2>Event Promo Video</h2>
+    <video width="400" controls autoplay muted>
+      <source src="event.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoMessage">Enjoy a sneak peek of our amazing events!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2025 Local Community Events. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Geolocation
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.getElementById("locResult").innerText = "Geolocation is not supported by your browser.";
+      }
+    }
+
+    function showPosition(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      document.getElementById("locResult").innerText = `Latitude: ${lat}, Longitude: ${lon}`;
+    }
+
+    // Feedback Character Count
+    const feedback = document.getElementById("feedback");
+    const charCount = document.getElementById("charCount");
+    feedback.addEventListener("input", () => {
+      const remaining = 200 - feedback.value.length;
+      charCount.textContent = `${remaining} characters remaining`;
+    });
+
+    // Submit Feedback
+    function submitFeedback() {
+      alert("Thank you for your feedback!");
+    }
+
+    // Show Thank You Message
+    function showThankYou() {
+      document.getElementById("thanks").innerText = "Thanks for your support!";
+    }
+  </script>
+</body>
+</html>

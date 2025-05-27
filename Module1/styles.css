@@ -1,0 +1,166 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+   background-image: url(https://www.ppt-backgrounds.net/thumbs/light-blue-art-downloads-backgrounds.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   color: #333;
+   text-align: center;
+}
+
+h1, h2 {
+  margin: 10px 0;
+}
+
+/* Header */
+.header {
+  background-color: #444;
+  padding: 10px 0;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Banner */
+#welcomeBanner {
+  background-color: #007bff;
+  color: white;
+  padding: 30px 10px;
+}
+
+.highlight {
+  color: rgb(255, 168, 137);
+}
+
+/* Gallery */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+table caption {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+td img {
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  border: 3px solid #007bff;
+}
+
+td img:hover {
+  transform: scale(1.5);
+}
+
+/* Form */
+form {
+  background-color:hsl(197, 71%, 73%,0.8) ;
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+form table {
+  width: 100%;
+}
+
+form td {
+  padding: 10px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+  width: 95%;
+  padding: 8px;
+  border: 2px solid #4ec7f7;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: hsl(197, 71%, 73%,0.9);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Feedback */
+#feedback {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  height: 100px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#charCount {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+#Thumb {
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#Thumb:hover {
+  transform: scale(1.2);
+}
+
+#thanks {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Video */
+#promo h2{
+    margin-top: 200px;
+}
+video {
+  margin: 20px 0;
+  border: 3px solid #007bff;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #444;
+  color: white;
+  padding: 15px 0;
+  margin-top: 40px;
+}
